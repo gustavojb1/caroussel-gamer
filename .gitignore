@@ -38,6 +38,3 @@ next-env.d.ts
 # !!!RETIRAR
 #pasta public
 public/
-
-#JSON HEROES
-/src/heroes.json
