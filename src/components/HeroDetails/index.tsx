@@ -1,6 +1,6 @@
 import { spidermanFont } from "@/fonts";
 import { IHeroData } from "@/interfaces/heroes";
-import { Quicksand } from "next/font/google";
+import { Quicksand, Pathway_Gothic_One } from "next/font/google";
 import styles from "./heroDetails.module.scss";
 import Image from "next/image";
 
@@ -8,6 +8,12 @@ const quicksand = Quicksand({
   subsets: ["latin"],
   weight: ["400", "600", "700"],
 });
+
+const Pathway= Pathway_Gothic_One({
+  subsets: ["latin"],
+  weight: ["400"],
+});
+
 
 interface IProps {
   data: IHeroData;
@@ -17,7 +23,7 @@ export default function HeroDetails({ data }: IProps) {
   const { id, name, universe, details } = data;
 
   return(
-    <div className={quicksand.className}>
+    <div className={`${quicksand.className} ${styles.divtitle}`}>
       <h1 className={`${spidermanFont.className} ${styles.title}`}>
         {name} (Universo-{universe})
       </h1>
