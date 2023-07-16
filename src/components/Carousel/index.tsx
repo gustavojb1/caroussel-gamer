@@ -5,6 +5,7 @@ import HeroDetails from "../HeroDetails";
 import { useEffect, useMemo, useState } from "react";
 import HeroPicture from "../HeroPicture";
 import { AnimatePresence, motion } from "framer-motion";
+import useWindowSize from "@/app/Hooks/useWindowSize";
 
 enum enPosition {
   FRONT = 0,
@@ -18,6 +19,9 @@ interface IProps {
 }
 
 export default function Carousel({ heroes, activeId }: IProps) {
+
+    //Hook personalizado de largura e altura da tela
+    const { width, height } = useWindowSize();
   // Controla os itens visíveis do carrossel
   const [visibleItems, setVisibleItems] = useState<IHeroData[] | null>(null);
 
@@ -153,7 +157,6 @@ export default function Carousel({ heroes, activeId }: IProps) {
   if (!visibleItems) {
     return null;
   }
-
   return (
     <div className={styles.container}>
       <div className={styles.carousel}>
@@ -174,8 +177,8 @@ export default function Carousel({ heroes, activeId }: IProps) {
                   x: -1500,
                   scale: 0.75,
                 }}
-                animate={{ x: 0, ...getItemStyles(position) }}
-                exit={exitStyle()}
+                animate={{ x: 0, ...getItemStyles(position, width) }}
+                exit={exitStyle(width)}
               >
                 <HeroPicture hero={item} />
               </motion.div>
@@ -194,17 +197,20 @@ export default function Carousel({ heroes, activeId }: IProps) {
     </div>
   );
 }
-var largura =
-  window.innerWidth ||
-  document.documentElement.clientWidth ||
-  document.body.clientWidth;
 
-console.log(largura);
+//pegar a largura da tela
+// var largura =
+//   window.innerWidth ||
+//   document.documentElement.clientWidth ||
+//   document.body.clientWidth;
+
 // estilos para o item que está visível na animação
 // dependendo da posição do herói no carrossel
-const getItemStyles = (position: enPosition) => {
+const getItemStyles = (position: enPosition, width:any) => {
+
+
   if (position === enPosition.FRONT) {
-    if (largura < 780) {
+    if (width && width < 780) {
       return {
         left: "-20%",
         filter: "blur(10px)",
@@ -221,7 +227,7 @@ const getItemStyles = (position: enPosition) => {
   }
 
   if (position === enPosition.MIDDLE) {
-    if (largura < 780) {
+    if (width && width < 780) {
       return {
         left: "23%",
         scale: 1,
@@ -237,7 +243,7 @@ const getItemStyles = (position: enPosition) => {
       };
     }
   }
-  if (largura < 780) {
+  if (width && width < 780) {
     return {
       filter: "blur(10px)",
       scale: 1.2,
@@ -257,11 +263,11 @@ const getItemStyles = (position: enPosition) => {
   }
 };
 
-const exitStyle = () => {
-  if (largura < 780) {
+const exitStyle = ( width:any) => {
+
+  if (width && width < 780) {
     return {
-      x: 0,
-      left: "-20%",
+      x: -1000,
       opacity: 0,
       scale: 1,
     };
