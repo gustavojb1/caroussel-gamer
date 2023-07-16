@@ -28,6 +28,7 @@ export default function RootLayout({
           />
           <Link href="/">
             <Image
+            className={"logo"}
               src="/spider-logo.svg"
               alt="Spiderman"
               width={260}
