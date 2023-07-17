@@ -17,6 +17,7 @@
   @media (max-width: 780px) {
     width: 85vw;
     margin-top: 100px;
+    height: 37vh;
   }
 }
 
@@ -68,6 +69,8 @@
     font-size: 30rem;
   }
 }
+
+
 .mobileWrapper {
   display: none;
   @media (max-width: 780px) {
@@ -88,6 +91,7 @@
   justify-content: center;
   height: 100%;
   width: 100%;
+  
   img {
     max-height: 100%;
     width: auto;
