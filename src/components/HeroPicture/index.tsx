@@ -27,7 +27,7 @@ export default function HeroPicture({ hero }: IProps) {
   return (
     <Image
       src={heroesImage[hero.id] || ImageAxel}
-      alt={`${hero.name} (Universo-${hero.universe})` || ""}
+      alt={`${hero.id} ` || ""}
       priority
     />
   );
