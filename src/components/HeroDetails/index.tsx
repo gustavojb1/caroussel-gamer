@@ -15,14 +15,10 @@ const play = Play({
   display: "swap",
 });
 
-function color(skill:number){
-  if(skill>7)
-  return "#A2FF86"
-  if(skill>4)
-  return "#F6FA70"
-  if(skill<5)
-  return "#ED2B2A"
-
+function color(skill: number) {
+  if (skill > 7) return "#A2FF86";
+  if (skill > 4) return "#F6FA70";
+  if (skill < 5) return "#ED2B2A";
 }
 
 export default function HeroDetails({ data }: IProps) {
@@ -49,13 +45,15 @@ export default function HeroDetails({ data }: IProps) {
               initial={{ width: 0 }}
               animate={{ width: `${skills.strength}0%` }}
               transition={{ duration: 1, type: "spring", stiffness: 300 }}
-              style={{backgroundColor:color(skills.strength) }}
+              style={{ backgroundColor: color(skills.strength) }}
             ></motion.div>
           </div>
 
           <div className={styles.skillPoints}>
             Inteligência
-            <div className={styles.skillPointsNumber}>{skills.intelligence}</div>
+            <div className={styles.skillPointsNumber}>
+              {skills.intelligence}
+            </div>
           </div>
           <div className={styles.skillBarContent}>
             <motion.div
@@ -63,7 +61,7 @@ export default function HeroDetails({ data }: IProps) {
               initial={{ width: 0 }}
               animate={{ width: `${skills.intelligence}0%` }}
               transition={{ duration: 1, type: "spring", stiffness: 300 }}
-              style={{backgroundColor:color(skills.intelligence) }}
+              style={{ backgroundColor: color(skills.intelligence) }}
             ></motion.div>
           </div>
 
@@ -77,7 +75,7 @@ export default function HeroDetails({ data }: IProps) {
               initial={{ width: 0 }}
               animate={{ width: `${skills.agility}0%` }}
               transition={{ duration: 1, type: "spring", stiffness: 300 }}
-              style={{backgroundColor:color(skills.agility) }}
+              style={{ backgroundColor: color(skills.agility) }}
             ></motion.div>
           </div>
 
@@ -91,7 +89,7 @@ export default function HeroDetails({ data }: IProps) {
               initial={{ width: 0 }}
               animate={{ width: `${skills.defense}0%` }}
               transition={{ duration: 1, type: "spring", stiffness: 300 }}
-              style={{backgroundColor:color(skills.defense) }}
+              style={{ backgroundColor: color(skills.defense) }}
             ></motion.div>
           </div>
 
@@ -103,9 +101,9 @@ export default function HeroDetails({ data }: IProps) {
             <motion.div
               className={styles.skillBar}
               initial={{ width: 0 }}
-              animate={{ width: `${skills.attack}0%`}}
+              animate={{ width: `${skills.attack}0%` }}
               transition={{ duration: 1, type: "spring", stiffness: 300 }}
-              style={{backgroundColor:color(skills.attack) }}
+              style={{ backgroundColor: color(skills.attack) }}
             ></motion.div>
           </div>
         </div>
@@ -113,5 +111,3 @@ export default function HeroDetails({ data }: IProps) {
     </div>
   );
 }
-
-

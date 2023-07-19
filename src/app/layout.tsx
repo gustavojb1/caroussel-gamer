@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import "./globals.scss"
+import "./globals.scss";
 import Image from "next/image";
 import Link from "next/link";
-
-
 
 export const metadata: Metadata = {
   title: "Caroussel Gamer",
@@ -17,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body >
+      <body>
         <header>
           <Image
             src="/icons/menu.svg"
@@ -28,7 +26,7 @@ export default function RootLayout({
           />
           <Link href="/">
             <Image
-            className={"logo"}
+              className={"logo"}
               src="/ancient-logo.svg"
               alt="Rise of Ancients Logo"
               width={260}

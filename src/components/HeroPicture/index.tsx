@@ -10,13 +10,13 @@ import ImageZephyr from "/public/heroes/ImageZephyr.png";
 import { IHeroData } from "@/interfaces/heroes";
 
 const heroesImage: Record<string, StaticImageData> = {
-  "axel": ImageAxel,
-  "boros": ImageBoros,
-  "kuro": ImageKuro,
-  "lira": ImageLira,
-  "nimue": ImageNimue,
-  "ragnar": ImageRagnar,
-  "zephyr": ImageZephyr,
+  axel: ImageAxel,
+  boros: ImageBoros,
+  kuro: ImageKuro,
+  lira: ImageLira,
+  nimue: ImageNimue,
+  ragnar: ImageRagnar,
+  zephyr: ImageZephyr,
 };
 
 interface IProps {

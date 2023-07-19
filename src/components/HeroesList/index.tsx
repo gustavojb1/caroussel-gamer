@@ -56,20 +56,14 @@ export default function HeroesList({ heroes }: IProps) {
 
   return (
     <>
-        <motion.div 
+      <motion.div
         className={styles.mainImage}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 2 }}
-        >
-        <Image
-            src="/ancient-text.svg"
-            alt="Login"
-            fill={true}
-            priority
-          />
-
-        </motion.div>
+      >
+        <Image src="/ancient-text.svg" alt="Login" fill={true} priority />
+      </motion.div>
       <motion.section
         className={styles.heroes}
         initial={{ opacity: 0, y: -100 }}
@@ -141,10 +135,7 @@ export default function HeroesList({ heroes }: IProps) {
           />
         </div>
       </div>
-      <PositionHero
-        heroes={heroes}
-        activeHero={activeHero}
-      />
+      <PositionHero heroes={heroes} activeHero={activeHero} />
     </>
   );
 }

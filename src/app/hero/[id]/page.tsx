@@ -15,6 +15,7 @@ async function getData(): Promise<{ data: IHeroData[] }> {
   }
 
   return res.json();
+  
 }
 
 export default async function Hero({ params: { id } }: IProps) {

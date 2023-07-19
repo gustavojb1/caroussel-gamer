@@ -8,8 +8,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import useWindowSize from "@/app/Hooks/useWindowSize";
 import AudioTeste from "../AudioComponent/AudioVoices";
 
-
-
 enum enPosition {
   FRONT = 0,
   MIDDLE = 1,
@@ -21,17 +19,12 @@ interface IProps {
   activeId: string;
 }
 
-export default function Carousel({ heroes, activeId }: IProps) {  
-  
-  const [currentTrack, setCurrentTrack]:any = useState(null);
+export default function Carousel({ heroes, activeId }: IProps) {
+  const [currentTrack, setCurrentTrack]: any = useState(null);
 
   // reference
   const audioRef = useRef();
 
-
-
-
-  
   //Hook personalizado de largura e altura da tela
   const { width, height } = useWindowSize();
   // Controla os itens visíveis do carrossel
@@ -74,7 +67,7 @@ export default function Carousel({ heroes, activeId }: IProps) {
       return;
     }
 
-    function background(idHero:string):any{
+    function background(idHero: string): any {
       switch (idHero) {
         case "lira":
           return "#D7BBF5";
@@ -83,23 +76,23 @@ export default function Carousel({ heroes, activeId }: IProps) {
           return "#FFA559";
           break;
         case "zephyr":
-          return  "#9AC5F4";
+          return "#9AC5F4";
           break;
         case "kuro":
-          return  "#DDE6ED";
+          return "#DDE6ED";
           break;
         case "ragnar":
-          return  "#F45050";
+          return "#F45050";
           break;
         case "nimue":
-          return   "#CCEEBC";
+          return "#CCEEBC";
           break;
         case "axel":
-          return   "#F2F2F2";
+          return "#F2F2F2";
           break;
-    
+
         default:
-          return  "linear-gradient(#1d2024, #3d3d3d )"
+          return "linear-gradient(#1d2024, #3d3d3d )";
       }
     }
 
@@ -118,26 +111,24 @@ export default function Carousel({ heroes, activeId }: IProps) {
   // Voz de cada personagem
   const voicesAudio: Record<string, string> = useMemo(
     () => ({
-      "lira": "/songs/lira.mp3",
-      "boros": "/songs/boros.mp3",
-      "zephyr": "/songs/zephyr.mp3",
-      "kuro": "/songs/kuro.mp3",
-      "ragnar": "/songs/ragnar.mp3",
-      "nimue": "/songs/nimue.mp3",
-      "axel": "/songs/axel.mp3",
+      lira: "/songs/lira.mp3",
+      boros: "/songs/boros.mp3",
+      zephyr: "/songs/zephyr.mp3",
+      kuro: "/songs/kuro.mp3",
+      ragnar: "/songs/ragnar.mp3",
+      nimue: "/songs/nimue.mp3",
+      axel: "/songs/axel.mp3",
     }),
     []
   );
 
   // altera qual efeitos sonoro irá tocar ao rotacionar o carrossel
   useEffect(() => {
-
     if (!visibleItems) {
       return;
     }
-    setCurrentTrack(voicesAudio[visibleItems[1].id])
+    setCurrentTrack(voicesAudio[visibleItems[1].id]);
     transitionAudio.play();
-
   }, [visibleItems, transitionAudio, voicesAudio]);
 
   // Altera herói ativo no carrossel
@@ -231,19 +222,10 @@ export default function Carousel({ heroes, activeId }: IProps) {
       >
         <HeroDetails data={visibleItems[enPosition.MIDDLE]} />
       </motion.div>
-      <AudioTeste
-      currentTrack={currentTrack}
-      audioRef={audioRef}
-      />
+      <AudioTeste currentTrack={currentTrack} audioRef={audioRef} />
     </div>
   );
 }
-
-//pegar a largura da tela
-// var largura =
-//   window.innerWidth ||
-//   document.documentElement.clientWidth ||
-//   document.body.clientWidth;
 
 // estilos para o item que está visível na animação
 // dependendo da posição do herói no carrossel
@@ -272,7 +254,7 @@ const getItemStyles = (position: enPosition, width: any) => {
         scale: 1.7,
         zIndex: 4,
       };
-    } 
+    }
     if (width && width < 1000) {
       return {
         left: 340,
@@ -305,8 +287,7 @@ const getItemStyles = (position: enPosition, width: any) => {
         top: "-10%",
         zIndex: 2,
       };
-    } 
-    else {
+    } else {
       return {
         left: 410,
         scale: 1.3,

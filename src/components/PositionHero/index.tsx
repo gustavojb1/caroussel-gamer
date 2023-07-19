@@ -19,7 +19,7 @@ const PositionHero = ({ heroes, activeHero }: IProps) => {
                 width={30}
                 height={30}
                 alt=""
-                style={{fill:"#DBDFEA", color:"#DBDFEA"}}
+                style={{ fill: "#DBDFEA", color: "#DBDFEA" }}
               />
             </div>
           ) : (
