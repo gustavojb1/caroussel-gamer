@@ -4,7 +4,7 @@ import { IHeroData } from "@/interfaces/heroes";
 
 async function getData(): Promise<{ data: IHeroData[] }> {
   const res = await fetch(
-    "https://caroussel-gamer-gustavojb1.vercel.app/api/heroes"
+    "/api/heroes"
   );
 
   if (!res.ok) {
