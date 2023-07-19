@@ -13,7 +13,7 @@ const PositionHero = ({ heroes, activeHero }: IProps) => {
       <div className={styles.container}>
         {heroes.map((hero, index) =>
           index === activeHero ? (
-            <div>
+            <div key={index}>
               <Image
                 src="/icons/circle-dot.svg"
                 width={30}
@@ -23,7 +23,7 @@ const PositionHero = ({ heroes, activeHero }: IProps) => {
               />
             </div>
           ) : (
-            <div>
+            <div key={index}>
               <Image src="/icons/circle.svg" width={30} height={30} alt="" />
             </div>
           )
