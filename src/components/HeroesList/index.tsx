@@ -1,7 +1,6 @@
 "use client";
 import { IHeroData } from "@/interfaces/heroes";
 import styles from "./heroesList.module.scss";
-import { spidermanFont } from "@/fonts";
 import HeroPicture from "../HeroPicture";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
@@ -56,14 +55,20 @@ export default function HeroesList({ heroes }: IProps) {
 
   return (
     <>
-      <motion.h1
-        className={`${spidermanFont.className} ${styles.title}`}
+        <motion.div 
+        className={styles.mainImage}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 2 }}
-      >
-        Personagens
-      </motion.h1>
+        >
+        <Image
+            src="/ancient-text.svg"
+            alt="Login"
+            fill={true}
+            priority
+          />
+
+        </motion.div>
       <motion.section
         className={styles.heroes}
         initial={{ opacity: 0, y: -100 }}

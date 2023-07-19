@@ -29,8 +29,8 @@ export default function RootLayout({
           <Link href="/">
             <Image
             className={"logo"}
-              src="/spider-logo.svg"
-              alt="Spiderman"
+              src="/ancient-logo.svg"
+              alt="Rise of Ancients Logo"
               width={260}
               height={70}
               priority

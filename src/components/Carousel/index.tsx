@@ -7,6 +7,8 @@ import HeroPicture from "../HeroPicture";
 import { AnimatePresence, motion } from "framer-motion";
 import useWindowSize from "@/app/Hooks/useWindowSize";
 
+
+
 enum enPosition {
   FRONT = 0,
   MIDDLE = 1,
@@ -18,10 +20,11 @@ interface IProps {
   activeId: string;
 }
 
-export default function Carousel({ heroes, activeId }: IProps) {
-
-    //Hook personalizado de largura e altura da tela
-    const { width, height } = useWindowSize();
+export default function Carousel({ heroes, activeId }: IProps) {  
+  
+  
+  //Hook personalizado de largura e altura da tela
+  const { width, height } = useWindowSize();
   // Controla os itens visíveis do carrossel
   const [visibleItems, setVisibleItems] = useState<IHeroData[] | null>(null);
 
@@ -62,8 +65,37 @@ export default function Carousel({ heroes, activeId }: IProps) {
       return;
     }
 
+    function background(idHero:string):any{
+      switch (idHero) {
+        case "lira":
+          return "#D7BBF5";
+          break;
+        case "boros":
+          return "#FFA559";
+          break;
+        case "zephyr":
+          return  "#9AC5F4";
+          break;
+        case "kuro":
+          return  "#DDE6ED";
+          break;
+        case "ragnar":
+          return  "#F45050";
+          break;
+        case "nimue":
+          return   "#CCEEBC";
+          break;
+        case "axel":
+          return   "#F2F2F2";
+          break;
+    
+        default:
+          return  "linear-gradient(#1d2024, #3d3d3d )"
+      }
+    }
+
     const currentHeroId = visibleItems[1].id;
-    htmlEl.style.background = `url("/spiders/${currentHeroId}-background.png")`;
+    htmlEl.style.backgroundColor = background(currentHeroId);
     htmlEl.classList.add("hero-page");
 
     // remove a classe quando o componente é desmontado
@@ -77,27 +109,27 @@ export default function Carousel({ heroes, activeId }: IProps) {
   // Voz de cada personagem
   const voicesAudio: Record<string, HTMLAudioElement> = useMemo(
     () => ({
-      "spider-man-616": new Audio("/songs/spider-man-616.mp3"),
-      "mulher-aranha-65": new Audio("/songs/mulher-aranha-65.mp3"),
-      "spider-man-1610": new Audio("/songs/spider-man-1610.mp3"),
-      "sp-dr-14512": new Audio("/songs/sp-dr-14512.mp3"),
-      "spider-ham-8311": new Audio("/songs/spider-ham-8311.mp3"),
-      "spider-man-90214": new Audio("/songs/spider-man-90214.mp3"),
-      "spider-man-928": new Audio("/songs/spider-man-928.mp3"),
+      "lira": new Audio("/songs/lira.mp3"),
+      "boros": new Audio("/songs/boros.mp3"),
+      "zephyr": new Audio("/songs/zephyr.mp3"),
+      "kuro": new Audio("/songs/kuro.mp3"),
+      "ragnar": new Audio("/songs/ragnar.mp3"),
+      "nimue": new Audio("/songs/nimue.mp3"),
+      "axel": new Audio("/songs/axel.mp3"),
     }),
     []
   );
 
   // Reproduz efeitos sonoros ao rotacionar o carrossel
   useEffect(() => {
+
     if (!visibleItems) {
       return;
     }
-
     transitionAudio.play();
-    const voiceAudio = voicesAudio[visibleItems[1].id];
-
+    const voiceAudio =  voicesAudio[visibleItems[1].id];
     if (voiceAudio) {
+
       voiceAudio.volume = 0.3;
       voiceAudio?.play();
     }
@@ -206,13 +238,11 @@ export default function Carousel({ heroes, activeId }: IProps) {
 
 // estilos para o item que está visível na animação
 // dependendo da posição do herói no carrossel
-const getItemStyles = (position: enPosition, width:any) => {
-
-
+const getItemStyles = (position: enPosition, width: any) => {
   if (position === enPosition.FRONT) {
     if (width && width < 780) {
       return {
-        left: "-20%",
+        left: "-15%",
         filter: "blur(10px)",
         scale: 1.2,
         zIndex: 3,
@@ -229,15 +259,15 @@ const getItemStyles = (position: enPosition, width:any) => {
   if (position === enPosition.MIDDLE) {
     if (width && width < 780) {
       return {
-        left: "23%",
-        scale: 1,
+        left: "50%",
+        scale: 1.7,
         zIndex: 4,
-        top: "+10%",
+        
       };
     } else {
       return {
-        left: 400,
-        scale: 0.8,
+        left: 410,
+        scale: 1.3,
         top: "-10%",
         zIndex: 2,
       };
@@ -247,7 +277,7 @@ const getItemStyles = (position: enPosition, width:any) => {
     return {
       filter: "blur(10px)",
       scale: 1.2,
-      left: "70%",
+      left: "80%",
       opacity: 0.8,
       zIndex: 3,
     };
@@ -263,8 +293,7 @@ const getItemStyles = (position: enPosition, width:any) => {
   }
 };
 
-const exitStyle = ( width:any) => {
-
+const exitStyle = (width: any) => {
   if (width && width < 780) {
     return {
       x: -1000,

@@ -1,70 +1,35 @@
-import { spidermanFont } from "@/fonts";
+import { ethnocentric } from "@/fonts";
+import { Play } from "next/font/google";
+
 import { IHeroData } from "@/interfaces/heroes";
-import { Quicksand, Pathway_Gothic_One } from "next/font/google";
 import styles from "./heroDetails.module.scss";
-import Image from "next/image";
-
-const quicksand = Quicksand({
-  subsets: ["latin"],
-  weight: ["400", "600", "700"],
-});
-
-const Pathway= Pathway_Gothic_One({
-  subsets: ["latin"],
-  weight: ["400"],
-});
-
 
 interface IProps {
   data: IHeroData;
 }
 
+const play = Play({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+})
+
 export default function HeroDetails({ data }: IProps) {
-  const { id, name, universe, details } = data;
+  const { id, title, description, skills } = data;
 
-  return(
-    <div className={`${quicksand.className} ${styles.divtitle}`}>
-      <h1 className={`${spidermanFont.className} ${styles.title}`}>
-        {name} (Universo-{universe})
-      </h1>
-      <div className={styles.details}>
-      <h2 className={styles.subtitle}>Informações</h2>
-        <table className={styles.table}>
-          <tbody>
-            <tr>
-              <td className={styles.label}>Nome Completo</td>
-              <td>{details.fullName}</td>
-            </tr>
-            <tr>
-              <td className={styles.label}>Data de Nascimento</td>
-              <td>{new Date(details.birthday).toLocaleDateString("pt-BR")}</td>
-            </tr>
-            <tr>
-              <td className={styles.label}>Terra Natal</td>
-              <td>{details.homeland}</td>
-            </tr>
-            <tr>
-              <td className={styles.label}>Altura</td>
-              <td>{details.height.toFixed(2)}m</td>
-            </tr>
-            <tr>
-              <td className={styles.label}>Peso</td>
-              <td>{details.weight.toFixed(2)}kg</td>
-            </tr>
-          </tbody>
-        </table>
+  return (
+    <div className={styles.container}>
+      <div className={`${styles.name} ${ethnocentric.className}`}>{id},</div>
+      <div className={`${styles.title} ${ethnocentric.className}`}>{title}</div>
+      <div className={`${styles.description} ${play.className}`}>{description}</div>
+      <div className={`${styles.skills} ${ethnocentric.className}`}>
+        Skills
+        <div>{skills.strength}</div>
+        <div>{skills.intelligence}</div>
+        <div>{skills.agility}</div>
+        <div>{skills.defense}</div>
+        <div>{skills.attack}</div>
       </div>
-
-      <div className={styles.details}>
-        <h2 className={styles.subtitle}>Primeira Aparição</h2>
-        <Image
-          src={`/spiders/${id}-comic-book.png`}
-          alt={`Primeira aparição nos quadrinhos de ${name} no universo ${universe}`}
-          width={80}
-          height={122}
-        />
-      </div>
-
     </div>
-  )
+  );
 }

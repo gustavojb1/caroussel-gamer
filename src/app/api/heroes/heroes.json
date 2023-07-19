@@ -1,86 +1,86 @@
 [
   {
-    "id": "spider-man-616",
-    "name": "Homem-Aranha",
-    "universe": 616,
-    "details": {
-      "fullName": "Peter B. Parker",
-      "birthday": "1980-08-27",
-      "homeland": "Queens, Nova Iorque",
-      "height": 1.78,
-      "weight": 75.75
+    "id": "lira",
+    "title": "A mestra dos elementos",
+    "description": "Uma poderosa maga que pode manipular os quatro elementos da natureza: fogo, água, terra e ar. Ela usa sua inteligência e agilidade para conjurar feitiços devastadores e controlar o campo de batalha. Lira é uma herói versátil que pode se adaptar a qualquer situação.",
+    "skills": {
+      "strength": 4,
+      "intelligence": 10,
+      "agility": 8,
+      "defense": 6,
+      "attack": 9
     }
   },
   {
-    "id": "mulher-aranha-65",
-    "name": "Mulher-Aranha",
-    "universe": 65,
-    "details": {
-      "fullName": "Gwen Stacy",
-      "birthday": "2002-03-02",
-      "homeland": "Manhattan, Nova York",
-      "height": 1.65,
-      "weight": 56.7
+    "id": "boros",
+    "title": "O Guerreiro Indomávels",
+    "description": "Metade homem, metade touro, possui uma força incrível e uma vontade inabalável. Ele usa sua arma de duas mãos para esmagar seus inimigos e resistir a qualquer dano. Boros é um herói de combate corpo a corpo que pode liderar a carga e causar muito impacto.",
+    "skills": {
+      "strength": 10,
+      "intelligence": 14,
+      "agility": 5,
+      "defense": 5,
+      "attack": 9
     }
   },
   {
-    "id": "spider-man-1610",
-    "name": "Homem-Aranha II",
-    "universe": 1610,
-    "details": {
-      "fullName": "Miles Morales",
-      "birthday": "1999-08-03",
-      "homeland": "Brooklyn, Nova York",
-      "height": 1.73,
-      "weight": 72.5
+    "id": "zephyr",
+    "title": "O Senhor dos Ventos",
+    "description":"Pode voar pelos céus e dominar o elemento do ar. Ele usa sua velocidade e precisão para atacar seus alvos à distância e escapar de perigos. Zephyr é um herói de mobilidade e dano que pode surpreender seus inimigos e explorar sua vantagem aérea.",
+    "skills": {
+      "strength": 6,
+      "intelligence": 8,
+      "agility": 10,
+      "defense": 7,
+      "attack": 6
     }
   },
   {
-    "id": "sp-dr-14512",
-    "name": "SP//DR",
-    "universe": 14512,
-    "details": {
-      "fullName": "Peni Parker",
-      "birthday": "2009-10-22",
-      "homeland": "New York City, Nova York",
-      "height": 1.50,
-      "weight": 47.6
+    "id": "kuro",
+    "title": "O Assassino Silencioso",
+    "description":"Um ninja que se especializou na arte da furtividade e do assassinato. Ele usa suas lâminas e suas bombas de fumaça para se infiltrar nas linhas inimigas e eliminar seus alvos rapidamente. Kuro é um herói de alto risco e alta recompensa que pode mudar o rumo da batalha com uma única investida.",
+    "skills": {
+      "strength": 7,
+      "intelligence": 9,
+      "agility": 9,
+      "defense": 4,
+      "attack": 10
     }
   },
   {
-    "id": "spider-ham-8311",
-    "name": "Porco-Aranha",
-    "universe": 8311,
-    "details": {
-      "fullName": "Peter Porker",
-      "birthday": null,
-      "homeland": "Queens, Nova York",
-      "height": 1.57,
-      "weight": 43.9
+    "id": "ragnar",
+    "title": "O Conquistador de Dragões",
+    "description": "Ragnar é um homem com uma armadura de dragão que conquistou muitas terras e bestas lendárias. Ele usa sua clava em forma de cabeça de dragão para golpear seus inimigos com força bruta e intimidá-los com seu rugido. Ragnar é um herói de tanque e dano que pode aguentar muito castigo e revidar com fúria.",
+    "skills": {
+      "strength": 9,
+      "intelligence": 5,
+      "agility": 5,
+      "defense": 8,
+      "attack": 7
     }
   },
   {
-    "id": "spider-man-90214",
-    "name": "Homem-Aranha Noir",
-    "universe": 90214,
-    "details": {
-      "fullName": "Peter Parker",
-      "birthday": "1933-02-09",
-      "homeland": "Queens, Nova York",
-      "height": 1.78,
-      "weight": 79
+    "id": "nimue",
+    "title": "A Guardiã da Floresta",
+    "description": "Uma elfa que vive em harmonia com a natureza e os animais. Ela usa seu cetro com poder de cura e dano mágico para lançar feitiços em seus inimigos à distância e restaurar a vida de seus aliados. Nimue é uma herói de suporte e dano que pode ajudar sua equipe com suas habilidades benéficas e ofensivas.",
+    "skills": {
+      "strength": 5,
+      "intelligence": 9,
+      "agility": 7,
+      "defense": 8,
+      "attack": 5
     }
   },
   {
-    "id": "spider-man-928",
-    "name": "Homem-Aranha",
-    "universe": 928,
-    "details": {
-      "fullName": "Miguel O'hara",
-      "birthday": "1970-05-11",
-      "homeland": "Nueva York",
-      "height": 1.78,
-      "weight": 77.1
+    "id": "axel",
+    "title": "O Protetor Mecânico",
+    "description":"Um robô que foi construído para proteger a humanidade de ameaças externas. Ele usa seu canhão de plasma e seu escudo de energia para disparar em seus inimigos à distância e bloquear seus ataques. Axel é um herói de defesa e dano que pode fortificar sua posição e causar muito estrago.",
+    "skills": {
+      "strength": 8,
+      "intelligence": 5,
+      "agility": 4,
+      "defense": 10,
+      "attack": 6
     }
   }
 ]
