@@ -1,0 +1,11 @@
+.container{
+  display: none;
+  @media (max-width: 780px) {
+    display: flex;
+    position: absolute;
+    height: 78vh;
+    align-items: flex-end;
+    column-gap: 10px;
+    z-index: 0;
+  }
+}

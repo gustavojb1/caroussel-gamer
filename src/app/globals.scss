@@ -18,6 +18,10 @@
     width: 100%;
 
   }
+  @media (max-width: 780px) {
+    overflow-y: hidden;
+
+  }
 }
 
 body {
@@ -32,6 +36,7 @@ body {
   @media (max-width:780px) {
     overflow-y: scroll;
     z-index: 4;
+    
   }
 }
 

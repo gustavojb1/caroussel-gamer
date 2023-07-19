@@ -7,6 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import useWindowSize from "@/app/Hooks/useWindowSize";
+import PositionHero from "../PositionHero";
 
 interface IProps {
   heroes: IHeroData[];
@@ -140,6 +141,10 @@ export default function HeroesList({ heroes }: IProps) {
           />
         </div>
       </div>
+      <PositionHero
+        heroes={heroes}
+        activeHero={activeHero}
+      />
     </>
   );
 }

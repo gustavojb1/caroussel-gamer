@@ -2,10 +2,11 @@
 import { IHeroData } from "@/interfaces/heroes";
 import styles from "./carousel.module.scss";
 import HeroDetails from "../HeroDetails";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import HeroPicture from "../HeroPicture";
 import { AnimatePresence, motion } from "framer-motion";
 import useWindowSize from "@/app/Hooks/useWindowSize";
+import AudioTeste from "../AudioComponent/AudioVoices";
 
 
 
@@ -22,6 +23,14 @@ interface IProps {
 
 export default function Carousel({ heroes, activeId }: IProps) {  
   
+  const [currentTrack, setCurrentTrack]:any = useState(null);
+
+  // reference
+  const audioRef = useRef();
+
+
+
+
   
   //Hook personalizado de largura e altura da tela
   const { width, height } = useWindowSize();
@@ -107,32 +116,28 @@ export default function Carousel({ heroes, activeId }: IProps) {
   const transitionAudio = useMemo(() => new Audio("/songs/transition.mp3"), []);
 
   // Voz de cada personagem
-  const voicesAudio: Record<string, HTMLAudioElement> = useMemo(
+  const voicesAudio: Record<string, string> = useMemo(
     () => ({
-      "lira": new Audio("/songs/lira.mp3"),
-      "boros": new Audio("/songs/boros.mp3"),
-      "zephyr": new Audio("/songs/zephyr.mp3"),
-      "kuro": new Audio("/songs/kuro.mp3"),
-      "ragnar": new Audio("/songs/ragnar.mp3"),
-      "nimue": new Audio("/songs/nimue.mp3"),
-      "axel": new Audio("/songs/axel.mp3"),
+      "lira": "/songs/lira.mp3",
+      "boros": "/songs/boros.mp3",
+      "zephyr": "/songs/zephyr.mp3",
+      "kuro": "/songs/kuro.mp3",
+      "ragnar": "/songs/ragnar.mp3",
+      "nimue": "/songs/nimue.mp3",
+      "axel": "/songs/axel.mp3",
     }),
     []
   );
 
-  // Reproduz efeitos sonoros ao rotacionar o carrossel
+  // altera qual efeitos sonoro irá tocar ao rotacionar o carrossel
   useEffect(() => {
 
     if (!visibleItems) {
       return;
     }
+    setCurrentTrack(voicesAudio[visibleItems[1].id])
     transitionAudio.play();
-    const voiceAudio =  voicesAudio[visibleItems[1].id];
-    if (voiceAudio) {
 
-      voiceAudio.volume = 0.3;
-      voiceAudio?.play();
-    }
   }, [visibleItems, transitionAudio, voicesAudio]);
 
   // Altera herói ativo no carrossel
@@ -222,10 +227,14 @@ export default function Carousel({ heroes, activeId }: IProps) {
         className={styles.details}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 2 }}
+        transition={{ duration: 1 }}
       >
         <HeroDetails data={visibleItems[enPosition.MIDDLE]} />
       </motion.div>
+      <AudioTeste
+      currentTrack={currentTrack}
+      audioRef={audioRef}
+      />
     </div>
   );
 }
@@ -262,9 +271,42 @@ const getItemStyles = (position: enPosition, width: any) => {
         left: "50%",
         scale: 1.7,
         zIndex: 4,
-        
       };
-    } else {
+    } 
+    if (width && width < 1000) {
+      return {
+        left: 340,
+        scale: 1.1,
+        top: "-10%",
+        zIndex: 2,
+      };
+    }
+
+    if (width && width < 1100) {
+      return {
+        left: 340,
+        scale: 1.2,
+        top: "-10%",
+        zIndex: 2,
+      };
+    }
+    if (width && width < 1200) {
+      return {
+        left: 340,
+        scale: 1.3,
+        top: "-10%",
+        zIndex: 2,
+      };
+    }
+    if (width && width < 1300) {
+      return {
+        left: 380,
+        scale: 1.3,
+        top: "-10%",
+        zIndex: 2,
+      };
+    } 
+    else {
       return {
         left: 410,
         scale: 1.3,

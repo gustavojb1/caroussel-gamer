@@ -1,49 +1,55 @@
 .container {
   display: flex;
 
-
-  @media (max-width:780px) {
+  @media (max-width: 780px) {
     flex-direction: column;
     width: 100vw;
-      z-index: 4;
+    z-index: 4;
   }
 }
 
 .carousel {
-  flex: 1;
   left: -15%;
   position: relative;
   width: 100%;
-  @media (max-width:1300px) {
+  @media (max-width: 1500px) {
     left: -20%;
   }
-  @media (max-width:1200px) {
+  @media (max-width: 1400px) {
     left: -25%;
   }
-  @media (max-width:1100px) {
+
+  @media (max-width: 1100px) {
     left: -30%;
   }
-  @media (max-width:1000px) {
-    left: -45%;
+
+  @media (max-width: 1000px) {
+    left: -35%;
+  }
+  @media (max-width: 900px) {
+    left: -40%;
+  }
+  @media (max-width: 850px) {
+    left: -48%;
   }
 
-
-  @media (max-width:780px) {
+  @media (max-width: 780px) {
     left: 0;
     overflow-x: hidden;
   }
+
 }
 
 .wrapper {
-  -webkit-user-select:none;  
-  -moz-user-select:none;     
-  -ms-user-select:none;      
-  user-select:none;  
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   cursor: grab;
   height: 130vh;
   position: relative;
 
-  @media (max-width:780px) {
+  @media (max-width: 780px) {
     height: 60vh;
     width: 100vw;
     left: 0;
@@ -53,8 +59,11 @@
     align-items: center;
     justify-content: center;
   }
-  @media (max-width:450px) {
+  @media (max-width: 450px) {
     height: 50vh;
+  }
+  @media (max-width: 350px) {
+    padding-left: 25%;
   }
 
   &:active {
@@ -67,7 +76,7 @@
   left: 0;
   position: absolute;
   width: 500px;
-  @media (max-width:780px) {
+  @media (max-width: 780px) {
     height: 75%;
     margin-top: 5%;
   }
@@ -76,38 +85,18 @@
     object-fit: contain;
     object-position: center right;
     width: 100%;
-    @media (max-width:780px) {
+    @media (max-width: 780px) {
       max-width: 50vw;
-
     }
   }
 }
 
-
 .details {
   margin-top: 3rem;
-  position: relative;
-  flex: 1;
-  @media (max-width:1300px) {
-    margin-left:100px
+  position: absolute;
+  left: 50vw;
+  @media (max-width: 780px) {
+    position: relative;
+    left: 0;
   }
-  @media (max-width:1130px) {
-    margin-left:300px
-  }
-
-  @media (max-width:1050px) {
-    margin-left:550px
-  }
-
-  @media (max-width:1000px) {
-    margin-left:500px
-  }
-
-  @media (max-width:780px) {
-    margin-left:0px;
-    display: flex;
-    justify-content: center;
-  }
-
 }
-
