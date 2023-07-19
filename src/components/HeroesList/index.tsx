@@ -26,7 +26,7 @@ export default function HeroesList({ heroes }: IProps) {
   //retirar o herói ativo da lista de herois
   useEffect(() => {
     setHerosList([...heroes].filter((hero, index) => index !== activeHero));
-  }, [activeHero]);
+  }, [activeHero, heroes]);
 
   const [side, setSide] = useState<boolean>(true);
 
