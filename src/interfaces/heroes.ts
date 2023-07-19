@@ -1,12 +1,12 @@
 export interface IHeroData {
   id: string;
-  name: string;
-  universe: number;
-  details: {
-    fullName: string;
-    birthday: string;
-    homeland: string;
-    height: number;
-    weight: number;
+  title: string;
+  description: string;
+  skills: {
+    strength: number;
+    intelligence: number;
+    agility: number;
+    defense: number;
+    attack: number;
   };
 }

@@ -1,29 +1,45 @@
 @import "@/app/variables.scss";
 
+.mainImage{
+  width: 100vw;
+  height: 58vh;
+  position: relative;
+  
+  img{
+    height: auto;
+    object-fit: contain;
+    width: 100%;
+  }
+  @media (max-width: 780px) {
+    height: 20vh;
+  }
+}
+
 .heroes {
   align-items: flex-end;
   display: flex;
   justify-content: space-between;
-  max-width: calc($max-width - 700px);
   position: absolute;
-  top: 40%;
-  width: 100%;
-
-  @media screen and (min-width: $max-width) {
-    max-width: calc($max-width - 400px);
+  top: 65%;
+  width: 85%;
+  @media (max-width: 1500px) {
+    top: 55%;
+  }
+  @media (max-width: 1200px) {
     top: 50%;
+    width: 95%;
   }
 
   @media (max-width: 780px) {
     width: 85vw;
-    margin-top: 100px;
+    margin-top: 180px;
+    height: 40vh;
   }
 }
 
 .imageContainer {
   cursor: pointer;
   position: relative;
-
   img {
     height: 100%;
     object-fit: contain;
@@ -31,43 +47,38 @@
     width: 100%;
   }
 
-  &.spider-man-616 {
-    height: $spider-man-616-height;
+  &.lira {
+    height: $lira;
+
   }
 
-  &.mulher-aranha-65 {
-    height: $mulher-aranha-65-height;
+  &.boros {
+    height: $boros;
   }
 
-  &.spider-man-1610 {
-    height: $spider-man-1610-height;
+  &.zephyr {
+    height: $zephyr;
   }
 
-  &.sp-dr-14512 {
-    height: $sp-dr-14512-height;
+  &.kuro {
+    height: $kuro;
   }
 
-  &.spider-ham-8311 {
-    height: $spider-ham-8311-height;
+  &.ragnar {
+    height: $ragnar;
   }
 
-  &.spider-man-90214 {
-    height: $spider-man-90214-height;
+  &.nimue {
+    height: $nimue;
   }
 
-  &.spider-man-928 {
-    height: $spider-man-928-height;
-  }
-}
-
-.title {
-  font-size: 26vw;
-  margin: 0;
-
-  @media screen and (min-width: $max-width) {
-    font-size: 30rem;
+  &.axel {
+    height: $axel;
   }
 }
+
+
+
 .mobileWrapper {
   display: none;
   @media (max-width: 780px) {
@@ -75,10 +86,10 @@
     display: flex;
     height: 60vh;
     width: 100vw;
-    top: 75px;
+    top: 110px;
     justify-content: space-between;
     align-items: center;
-
+    overflow: hidden;
   }
 }
 
@@ -88,27 +99,26 @@
   justify-content: center;
   height: 100%;
   width: 100%;
+  
   img {
-    max-height: 100%;
+    max-height: 80%;
     width: auto;
+
   }
 
-  &.mulher-aranha-65 {
-    max-height: 90%;
+  &.boros {
+    margin-left: 80px;
   }
 
-  &.spider-man-1610 {
-    max-height: 93%;
+  &.nimue {
+    max-height: 80%;
+    margin-left: 70px;
   }
 
-  &.sp-dr-14512 {
-    max-height: 70%;
+  &.axel {
+    margin-left: 10px;
   }
 
-  &.spider-ham-8311 {
-    max-height: 50%;
-    margin-top: 40px;
-  }
 }
 
 .leftRow {
@@ -120,6 +130,7 @@
     justify-content: center;
     margin-top: -30%;
     width: 60px;
+    
   }
 }
 .rightRow {
