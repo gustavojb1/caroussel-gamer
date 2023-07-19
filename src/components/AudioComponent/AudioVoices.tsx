@@ -6,7 +6,7 @@ const AudioVoices = ({ currentTrack, audioRef, visibleItems }:any) => {
 
   useEffect(()=>{
     audioRef.current.play()
-  },[visibleItems, currentTrack])
+  },[visibleItems, currentTrack, audioRef])
 
   return (
     <div>
