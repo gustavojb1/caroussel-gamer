@@ -90,6 +90,7 @@
     justify-content: space-between;
     align-items: center;
     overflow: hidden;
+
   }
 }
 
@@ -99,7 +100,7 @@
   justify-content: center;
   height: 100%;
   width: 100%;
-  
+  z-index: 2;
   img {
     max-height: 80%;
     width: auto;
@@ -130,6 +131,7 @@
     justify-content: center;
     margin-top: -30%;
     width: 60px;
+    z-index: 3;
     
   }
 }
@@ -142,5 +144,6 @@
     justify-content: center;
     width: 60px;
     right: 0;
+    z-index: 3;
   }
 }

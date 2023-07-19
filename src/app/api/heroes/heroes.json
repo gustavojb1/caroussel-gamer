@@ -17,7 +17,7 @@
     "description": "Metade homem, metade touro, possui uma força incrível e uma vontade inabalável. Ele usa sua arma de duas mãos para esmagar seus inimigos e resistir a qualquer dano. Boros é um herói de combate corpo a corpo que pode liderar a carga e causar muito impacto.",
     "skills": {
       "strength": 10,
-      "intelligence": 14,
+      "intelligence": 4,
       "agility": 5,
       "defense": 5,
       "attack": 9
