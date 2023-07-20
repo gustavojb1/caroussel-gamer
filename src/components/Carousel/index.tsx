@@ -116,7 +116,7 @@ export default function Carousel({ heroes, activeId }: IProps) {
       zephyr: "/songs/zephyr.mp3",
       kuro: "/songs/kuro.mp3",
       ragnar: "/songs/ragnar.mp3",
-      nimue: "/songs/nimue.mp3",
+      nimue: "/songs/Nimue.mp3",
       axel: "/songs/axel.mp3",
     }),
     []
