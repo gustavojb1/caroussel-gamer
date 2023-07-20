@@ -1,16 +1,14 @@
 import styles from "./page.module.scss";
 import HeroesList from "@/components/HeroesList";
 import { IHeroData } from "@/interfaces/heroes";
+import { GetDataHeroes } from "./api/heroes/route";
 
-async function getData(): Promise<{ data: IHeroData[] | null}> {
-  
+async function getData(): Promise<{ data: IHeroData[] }> {
 
-  const res = await fetch(
-    "https://caroussel-gamer-git-main-gustavojb1.vercel.app/api/heroes"
-  );
+  const res  = await GetDataHeroes()
 
   if (!res.ok) {
-    // throw new Error("Falha ao buscar heróis");
+    throw new Error("Falha ao buscar heróis");
   }
 
   return res.json();
@@ -18,15 +16,10 @@ async function getData(): Promise<{ data: IHeroData[] | null}> {
 
 export default async function Home() {
   const res = await getData();
- if(res.data){
-   return (
-     <main className={styles.main}>
-       <HeroesList heroes={res.data} />
-     </main>
-   );
- }else{
-  return(
-    <div>Erro na API</div>
-  )
- }
+
+  return (
+    <main className={styles.main}>
+      <HeroesList heroes={res.data} />
+    </main>
+  );
 }
