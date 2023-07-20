@@ -2,7 +2,7 @@ import styles from "./page.module.scss";
 import HeroesList from "@/components/HeroesList";
 import { IHeroData } from "@/interfaces/heroes";
 
-async function getData(): Promise<{ data: IHeroData[] }> {
+async function getData(): Promise<{ data: IHeroData[] | null}> {
   
 
   const res = await fetch(
