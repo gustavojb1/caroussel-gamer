@@ -10,7 +10,7 @@ async function getData(): Promise<{ data: IHeroData[] | null}> {
   );
 
   if (!res.ok) {
-    throw new Error("Falha ao buscar heróis");
+    // throw new Error("Falha ao buscar heróis");
   }
 
   return res.json();
