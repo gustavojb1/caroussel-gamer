@@ -1,3 +1,4 @@
+import { GetDataHeroes } from "@/app/api/heroes/route";
 import Carousel from "@/components/Carousel";
 import { IHeroData } from "@/interfaces/heroes";
 
@@ -8,8 +9,7 @@ interface IProps {
 }
 
 async function getData(): Promise<{ data: IHeroData[] }> {
-  const res = await fetch("http://localhost:3000/api/heroes");
-
+  const res  = await GetDataHeroes()
   if (!res.ok) {
     throw new Error("Falha ao buscar heróis");
   }
