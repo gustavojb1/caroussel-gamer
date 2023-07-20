@@ -3,9 +3,8 @@ import HeroesList from "@/components/HeroesList";
 import { IHeroData } from "@/interfaces/heroes";
 
 async function getData(): Promise<{ data: IHeroData[] }> {
-  const base_url= process.env.NEXT_PUBLIC_VERCEL_URL
   const res = await fetch(
-    `https://${base_url}.vercel.app/api/heroes`
+    "http://localhost:3000/api/heroes"
   );
 
   if (!res.ok) {
